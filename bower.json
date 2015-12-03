@@ -1,5 +1,5 @@
 {
-  "name": "locator",
+  "name": "bakveng-geolocator",
   "version": "0.1.0",
   "description": "a set of google location services for angularJS",
   "main": [
