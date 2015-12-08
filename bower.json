@@ -4,7 +4,8 @@
   "description": "a set of google location services for angularJS",
   "main": [
     "dist/locator.min.js",
-    "dist/locator-tpl.js"
+    "dist/locator-tpl.js",
+    "dist/styles.css"
   ],
   "license": "MIT",
    "ignore": [

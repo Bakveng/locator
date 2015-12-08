@@ -61,6 +61,14 @@ gulp.task('js', function() {
           .pipe(gulp.dest('./example/locator'));
 });
 
+gulp.task('css', function() {
+  return gulp.src([
+          'example/css/styles.css',          
+         ])
+          .pipe(gulp.dest('./dist/'))
+          .pipe(gulp.dest('./example/locator'));
+});
+
 
 // Convert partials to templateCache
 gulp.task('html2js', function() {
@@ -97,6 +105,6 @@ gulp.task('server', function() {
 });
 
 
-gulp.task('build', ['js', 'html2js']);
+gulp.task('build', ['js', 'html2js', 'css']);
 
 gulp.task('dev', ['build','server']);
