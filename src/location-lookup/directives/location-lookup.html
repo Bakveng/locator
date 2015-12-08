@@ -2,7 +2,7 @@
   <input type="text" placeholder="search for a location">
 </div>
 
-<ul>
+<ul ng-show="showResult">
   <!-- Results -->
   <li ng-repeat="option in results | limitTo:limitTo"
     ng-click="pickLocation(option);"

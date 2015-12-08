@@ -4,7 +4,7 @@ angular.module('locator')
     return {
       restrict: 'E',
       require: '?ngModel',
-      templateUrl: 'location-lookup/location-lookup.html',
+      templateUrl: 'location-lookup/directives/location-lookup.html',
       scope: {},
       link: function(scope, iElement, iAttrs, model) {
 
@@ -12,6 +12,13 @@ angular.module('locator')
         scope.callback = scope.$eval(iAttrs.callback);
         scope.results = [];
         scope.selectedPlace = '';
+        scope.showResult = false;
+
+        scope.$watch('results', function(results){
+          if(results && results.length > 0){        
+            scope.showResult = true;
+          }
+        });
 
         // Generate a DOM elment for Google Places Service
         var elem = document.createElement('div');
@@ -87,6 +94,7 @@ angular.module('locator')
             scope.$apply(function() {
 
               searchInputElement.val(location.description);
+              scope.showResult = false;
 
               var locData = {
                 name: location.terms[0].value,

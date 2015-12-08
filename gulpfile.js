@@ -64,8 +64,8 @@ gulp.task('js', function() {
 
 // Convert partials to templateCache
 gulp.task('html2js', function() {
-  return gulp.src(['./src/location-lookup/location-lookup.html',
-            './src/location-picker/location-picker.html'])
+  return gulp.src(['./src/location-lookup/directives/location-lookup.html',
+            './src/location-picker/directives/location-picker.html'])
           .pipe(html2js({
             outputModuleName: 'locator',
             useStrict: true,
@@ -97,6 +97,6 @@ gulp.task('server', function() {
 });
 
 
-gulp.task('build', ['karma-run', 'js', 'html2js']);
+gulp.task('build', ['js', 'html2js']);
 
-gulp.task('dev', ['server', 'karma-watch']);
+gulp.task('dev', ['build','server']);
