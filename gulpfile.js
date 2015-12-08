@@ -56,7 +56,7 @@ gulp.task('js', function() {
           '!./src/**/*.test.js'
          ])
           .pipe(concat('locator.min.js'))
-          .pipe(uglify())
+          // .pipe(uglify())
           .pipe(gulp.dest('./dist/'))
           .pipe(gulp.dest('./example/locator'));
 });

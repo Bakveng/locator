@@ -3,18 +3,23 @@ angular.module('locator')
   function() {
     return {
       restrict: 'E',
-      scope: { results: '=' },
+      scope: { 
+        results: '='
+      },
       template: '<input type="text" placeholder="search for a location">',
       link: function(scope, iElement, iAttrs) {
 
         // Setup Google Auto-complete Service
-        var googleMapsService = new google.maps.places.AutocompleteService();
+        var googleMapsService = new google.maps.places.AutocompleteService();        
         var el = angular.element(iElement.find('input'));
 
         // Fetch predictions based on query
         var fetch = function(query) {
           googleMapsService.getPlacePredictions({
-            input: query
+            input: query,
+            componentRestrictions: {
+              country: 'kh'
+            }
           }, fetchCallback);
         };
 
