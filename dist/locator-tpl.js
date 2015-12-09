@@ -8,9 +8,9 @@ app.run(["$templateCache", function($templateCache) {
     "  <input type=\"text\" placeholder=\"search for a location\">\n" +
     "</div>\n" +
     "\n" +
-    "<ul ng-show=\"showResult\">\n" +
+    "<ul ng-show=\"showResult\" class=\"locator_result\">\n" +
     "  <!-- Results -->\n" +
-    "  <li ng-repeat=\"option in results | limitTo:limitTo\"\n" +
+    "  <li class=\"locator_li_result\" ng-repeat=\"option in results | limitTo:limitTo\"\n" +
     "    ng-click=\"pickLocation(option);\"\n" +
     "    item=\"option\">{{option.description}}</li>\n" +
     "</ul>");
