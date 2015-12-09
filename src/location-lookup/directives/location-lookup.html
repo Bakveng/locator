@@ -2,9 +2,9 @@
   <input type="text" placeholder="search for a location">
 </div>
 
-<ul ng-show="showResult">
+<ul ng-show="showResult" class="locator_result">
   <!-- Results -->
-  <li ng-repeat="option in results | limitTo:limitTo"
+  <li class="locator_li_result" ng-repeat="option in results | limitTo:limitTo"
     ng-click="pickLocation(option);"
     item="option">{{option.description}}</li>
 </ul>
